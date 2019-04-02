@@ -12,6 +12,7 @@ from flag_spider.items import FlagSpiderItem
 # settings = Settings()
 logger = getLogger()
 
+
 class FlagSpider(scrapy.Spider):
     name = 'flag'
     allowed_domains = ['image.baidu.com']
@@ -27,8 +28,8 @@ class FlagSpider(scrapy.Spider):
         # logger.warning("[FlagSpider] download path: %s" % settings.get('IMAGES_STORE'))
 
     def start_requests(self):
-        root_path = self.settings.get('IMAGES_STORE')
-        self.settings.set('IMAGES_STORE', os.path.join(root_path, self.keyword))
+        # root_path = self.settings.get('IMAGES_STORE')
+        # self.settings.set('IMAGES_STORE', os.path.join(root_path, self.keyword))
 
         data = {'queryWord': self.keyword, 'word': self.keyword}
         base_url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord='
@@ -45,6 +46,7 @@ class FlagSpider(scrapy.Spider):
             item = FlagSpiderItem()
             try:
                 item['url'] = image.get('thumbURL')
+                item['keyword'] = self.keyword
                 yield item
             except Exception as e:
                 print(e)

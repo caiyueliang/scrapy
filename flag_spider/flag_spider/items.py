@@ -11,6 +11,7 @@ import scrapy
 class FlagSpiderItem(scrapy.Item):
     # define the fields for your item here like:
     url = scrapy.Field()
+    keyword = scrapy.Field()
     pass
 
 

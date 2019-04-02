@@ -13,16 +13,19 @@ from scrapy.pipelines.images import ImagesPipeline
 #     def process_item(self, item, spider):
 #         return item
 class FlagSpiderPipeline(ImagesPipeline):
+    # 返回保存的文件名
     def file_path(self, request, response=None, info=None):
         url = request.url
         file_name = url.split('/')[-1]
         return file_name
 
+    # 单个Item完成下载时的处理方法
     def item_completed(self, results, item, info):
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem('Image Downloaded Failed')
         return item
 
+    # 发起图片下载的请求
     def get_media_requests(self, item, info):
-        yield Request(item['url'])
+        yield Request(item['url'])              # 加入调度队列，等待被调度，执行下载

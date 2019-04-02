@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
+import os
 import scrapy
 import json
+from logging import getLogger
 from scrapy import Request
 from urllib.parse import quote
 from flag_spider.items import FlagSpiderItem
-
+# import scrapy.commands.crawl as crawl
+# from flag_spider import settings
+# from scrapy.settings import Settings
+# settings = Settings()
+logger = getLogger()
 
 class FlagSpider(scrapy.Spider):
     name = 'flag'
@@ -14,6 +20,11 @@ class FlagSpider(scrapy.Spider):
     def __init__(self, keyword='国旗', *args, **kwargs):
         super(FlagSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword
+
+        # # 更新image的保存路径
+        # root_path = settings.get('IMAGES_STORE')
+        # settings.set('IMAGES_STORE', os.path.join(root_path, self.keyword))
+        # logger.warning("[FlagSpider] download path: %s" % settings.get('IMAGES_STORE'))
 
     def start_requests(self):
         data = {'queryWord': self.keyword, 'word': self.keyword}

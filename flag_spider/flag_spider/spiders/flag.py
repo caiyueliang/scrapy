@@ -12,7 +12,7 @@ class FlagSpider(scrapy.Spider):
     start_urls = ['http://image.baidu.com/']
 
     def start_requests(self):
-        data = {'queryWord': '单色釉瓷', 'word': '单色釉瓷'}
+        data = {'queryWord': '国旗', 'word': '国旗'}
         base_url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord='
         for page in range(1, self.settings.get('MAX_PAGE') + 1):
             data['pn'] = page * 30

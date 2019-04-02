@@ -10,9 +10,8 @@ import scrapy
 
 class FlagSpiderItem(scrapy.Item):
     # define the fields for your item here like:
-    name = scrapy.Field()
     title = scrapy.Field()
-    info = scrapy.Field()
+    url = scrapy.Field()
     pass
 
 

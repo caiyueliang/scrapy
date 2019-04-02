@@ -54,5 +54,5 @@ class FlagSpider(scrapy.Spider):
         # # 直接返回最后数据
         # print('[items]', items)
         # return items
-        pass
+        # pass
 

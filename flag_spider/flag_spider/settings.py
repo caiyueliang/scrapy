@@ -23,7 +23,7 @@ ROBOTSTXT_OBEY = False
 
 MAX_PAGE = 30
 
-IMAGES_SAVE = './images/'
+IMAGES_STORE = './images/'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -69,7 +69,7 @@ IMAGES_SAVE = './images/'
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'flag_spider.pipelines.FlagSpiderPipeline': 300,
+   'flag_spider.pipelines.FlagSpiderPipeline': 1,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

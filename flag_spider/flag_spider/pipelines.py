@@ -28,4 +28,5 @@ class FlagSpiderPipeline(ImagesPipeline):
 
     # 发起图片下载的请求
     def get_media_requests(self, item, info):
-        yield Request(item['url'])              # 加入调度队列，等待被调度，执行下载
+        if item['url'] is not None:
+            yield Request(item['url'])              # 加入调度队列，等待被调度，执行下载

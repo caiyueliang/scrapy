@@ -92,3 +92,8 @@ AUTOTHROTTLE_DEBUG = False
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+LOG_ENABLED = True      # 启用logging
+LOG_FILE = None         # 在当前目录里创建logging输出文件的文件名
+LOG_LEVEL = 'WARNING'   # log的最低级别CRITICAL ERROR WARNING INFO DEBUG

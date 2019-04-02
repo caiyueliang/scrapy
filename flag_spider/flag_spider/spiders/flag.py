@@ -22,15 +22,7 @@ class FlagSpider(scrapy.Spider):
         super(FlagSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword
 
-        # # 更新image的保存路径
-        # root_path = settings.get('IMAGES_STORE')
-        # settings.set('IMAGES_STORE', os.path.join(root_path, self.keyword))
-        # logger.warning("[FlagSpider] download path: %s" % settings.get('IMAGES_STORE'))
-
     def start_requests(self):
-        # root_path = self.settings.get('IMAGES_STORE')
-        # self.settings.set('IMAGES_STORE', os.path.join(root_path, self.keyword))
-
         data = {'queryWord': self.keyword, 'word': self.keyword}
         base_url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord='
         for page in range(1, self.settings.get('MAX_PAGE') + 1):

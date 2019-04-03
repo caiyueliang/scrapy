@@ -52,5 +52,5 @@ if __name__ == '__main__':
 
     for keyword in keyword_list:
         logger.warning('[crawl] keyword: %s' % keyword)
-        subprocess.call("scrapy crawl image -a keyword="+keyword+" total_page="+str(args.total_page), shell=True)
+        subprocess.call("scrapy crawl image -a keyword="+keyword+" -a total_page="+str(args.total_page), shell=True)
 

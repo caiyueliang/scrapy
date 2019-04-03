@@ -19,7 +19,7 @@ class ImageSpider(scrapy.Spider):
     def __init__(self, keyword='国旗', total_page=100, *args, **kwargs):
         super(ImageSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword
-        self.total_page = total_page
+        self.total_page = int(total_page)
 
     def start_requests(self):
         data = {'queryWord': self.keyword, 'word': self.keyword}

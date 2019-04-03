@@ -8,7 +8,7 @@ if __name__ == '__main__':
                     '印度国旗', '巴西国旗', '越南国旗', '老挝国旗', '柬埔寨国旗',
                     '缅甸国旗', '泰国国旗', '马来西亚国旗', '新加坡国旗', '阿富汗国旗',
                     '伊拉克国旗', '伊朗国旗', '叙利亚国旗', '以色列国旗', '巴勒斯坦国旗']
-    # cmdline.execute("scrapy crawl flag -o result.csv".split())    # 用命令行启动
+    # cmdline.execute("scrapy crawl image -o result.csv".split())    # 用命令行启动
     for keyword in keyword_list:
         print(keyword)
         cmdline.execute(("scrapy crawl image -a keyword="+keyword).split())  # 用命令行启动

@@ -48,7 +48,7 @@ class ImageSpider(scrapy.Spider):
         # for each in response.xpath("//*[@id='imgid']"):
         #     print(each)
         #     # 将我们得到的数据封装到一个 `ItcastItem` 对象
-        #     item = FlagSpiderItem()
+        #     item = ImageSpiderItem()
         #     # extract()方法返回的都是unicode字符串
         #     name = each.xpath("h3/text()").extract()
         #     title = each.xpath("h4/text()").extract()

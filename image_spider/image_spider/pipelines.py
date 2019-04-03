@@ -10,10 +10,10 @@ from scrapy.pipelines.images import ImagesPipeline
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# class FlagSpiderPipeline(object):
+# class ImageSpiderPipeline(object):
 #     def process_item(self, item, spider):
 #         return item
-class FlagSpiderPipeline(ImagesPipeline):
+class ImageSpiderPipeline(ImagesPipeline):
     keyword = None
 
     # 返回保存的文件名

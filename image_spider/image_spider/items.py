@@ -8,15 +8,8 @@
 import scrapy
 
 
-class FlagSpiderItem(scrapy.Item):
+class ImageSpiderItem(scrapy.Item):
     # define the fields for your item here like:
     url = scrapy.Field()
     keyword = scrapy.Field()
-    pass
-
-
-class ItcastItem(scrapy.Item):
-    name = scrapy.Field()
-    title = scrapy.Field()
-    info = scrapy.Field()
     pass

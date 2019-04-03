@@ -5,11 +5,9 @@ import json
 from logging import getLogger
 from scrapy import Request
 from urllib.parse import quote
-from flag_spider.items import FlagSpiderItem
-# import scrapy.commands.crawl as crawl
-# from flag_spider import settings
-# from scrapy.settings import Settings
-# settings = Settings()
+from image_spider.items import ImageSpiderItem
+
+
 logger = getLogger()
 
 
@@ -35,7 +33,7 @@ class FlagSpider(scrapy.Spider):
     def parse(self, response):
         images = json.loads(response.body)['data']
         for image in images:
-            item = FlagSpiderItem()
+            item = ImageSpiderItem()
             try:
                 item['url'] = image.get('thumbURL')
                 item['keyword'] = self.keyword

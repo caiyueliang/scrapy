@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for flag_spider project
+# Scrapy settings for image_spider project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'flag_spider'
+BOT_NAME = 'image_spider'
 
-SPIDER_MODULES = ['flag_spider.spiders']
-NEWSPIDER_MODULE = 'flag_spider.spiders'
+SPIDER_MODULES = ['image_spider.spiders']
+NEWSPIDER_MODULE = 'image_spider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'flag_spider (+http://www.yourdomain.com)'
+#USER_AGENT = 'image_spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -50,13 +50,13 @@ DOWNLOAD_DELAY = 1
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'flag_spider.middlewares.FlagSpiderSpiderMiddleware': 543,
+#    'image_spider.middlewares.FlagSpiderSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'flag_spider.middlewares.FlagSpiderDownloaderMiddleware': 543,
+#    'image_spider.middlewares.FlagSpiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -68,7 +68,7 @@ DOWNLOAD_DELAY = 1
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'flag_spider.pipelines.FlagSpiderPipeline': 100,
+   'image_spider.pipelines.FlagSpiderPipeline': 100,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -11,13 +11,13 @@ from image_spider.items import ImageSpiderItem
 logger = getLogger()
 
 
-class FlagSpider(scrapy.Spider):
-    name = 'flag'
+class ImageSpider(scrapy.Spider):
+    name = 'image'
     allowed_domains = ['image.baidu.com']
     start_urls = ['http://image.baidu.com/']
 
     def __init__(self, keyword='国旗', *args, **kwargs):
-        super(FlagSpider, self).__init__(*args, **kwargs)
+        super(ImageSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword
 
     def start_requests(self):

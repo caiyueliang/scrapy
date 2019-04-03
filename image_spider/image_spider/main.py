@@ -11,5 +11,5 @@ if __name__ == '__main__':
     # cmdline.execute("scrapy crawl flag -o result.csv".split())    # 用命令行启动
     for keyword in keyword_list:
         print(keyword)
-        cmdline.execute(("scrapy crawl flag -a keyword="+keyword).split())  # 用命令行启动
+        cmdline.execute(("scrapy crawl image -a keyword="+keyword).split())  # 用命令行启动
 

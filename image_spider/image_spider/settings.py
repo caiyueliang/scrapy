@@ -21,7 +21,6 @@ NEWSPIDER_MODULE = 'image_spider.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-MAX_PAGE = 100
 IMAGES_STORE = './images/'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)

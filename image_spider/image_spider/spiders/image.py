@@ -16,14 +16,15 @@ class ImageSpider(scrapy.Spider):
     allowed_domains = ['image.baidu.com']
     start_urls = ['http://image.baidu.com/']
 
-    def __init__(self, keyword='国旗', *args, **kwargs):
+    def __init__(self, keyword='国旗', total_page=100, *args, **kwargs):
         super(ImageSpider, self).__init__(*args, **kwargs)
         self.keyword = keyword
+        self.total_page = total_page
 
     def start_requests(self):
         data = {'queryWord': self.keyword, 'word': self.keyword}
         base_url = 'https://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&ct=201326592&is=&fp=result&queryWord='
-        for page in range(1, self.settings.get('MAX_PAGE') + 1):
+        for page in range(1, self.total_page + 1):
             data['pn'] = page * 30
             url = base_url + quote(data['queryWord']) + '&cl=2&lm=-1&ie=utf-8&oe=utf-8&adpicid=&st=-1&z=&ic=0&word=' + \
                 quote(data['word']) + '&s=&se=&tab=&width=&height=&face=0&istype=2&qc=&nc=1&fr=&expermode=&pn=' + \
